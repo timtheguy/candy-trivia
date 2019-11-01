@@ -1,0 +1,22 @@
+<ion-content padding text-center>
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <div style="width: 100%">
+          <h3>Candy Trivia</h3>
+          <p style="font-size: 18px;">Answer a trivia question correctly, win some <span (click)="startGame()">candy!</span></p>
+          <p>Questions range from easy to hard in categories of science, nature, computers and technology. All questions sourced from the Open Trivia Database (<a>opentdb.com</a>).</p>
+      </div>
+
+      <div *ngIf="interfaceEnabled">
+        <button ion-button large block (click)="startGame()">Start</button>
+      </div>
+
+      <div *ngIf="!interfaceEnabled">
+        You must wait {{ timeLeft }} seconds until the next question
+        <button ion-button large block disabled>
+          Start
+        </button>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

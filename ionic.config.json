@@ -1,0 +1,7 @@
+{
+  "name": "TriviaCandy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
