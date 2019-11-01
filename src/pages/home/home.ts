@@ -18,22 +18,21 @@ export class HomePage {
   }
 
   startTimer() {
-    console.log()
+    console.log("[TIMER] Started questionWait timer")
     this.interval = setInterval(() => {
       if (this.timeLeft > 1) {
         this.timeLeft = this.timeLeft - 1;
       } else {
-        console.log("Done!");
+        console.log("[TIMER] Timer completed");
         this.interfaceEnabled = true;
         clearInterval(this.interval);
 
       }
 
-      console.log(this.timeLeft);
+      console.log("[TIMER] Seconds remaining: " + this.timeLeft);
     }, 1000)
   }
     
-
   startGame(){
     this.navCtrl.push('QuestionPage', {}, {animate: true, direction: 'forward'});
   }

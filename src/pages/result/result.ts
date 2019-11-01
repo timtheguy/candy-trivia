@@ -36,7 +36,7 @@ export class ResultPage {
     if(this.correctResult == undefined){
       this.navCtrl.setRoot(HomePage)
     }else{
-      console.log(this.correctResult);
+      console.log("[RESULT] User answer correct: " + this.correctResult);
       this.answer = this.sanitizer.bypassSecurityTrustHtml(this.navParams.get('answer'));
     }
   }
@@ -52,19 +52,18 @@ export class ResultPage {
     });
   
     loading.present();
-    console.log("Dispensing candy...");
 
     this.candyProvider.dispenseCandy()
     .subscribe(
       (response) => {
-        console.log("Response: ");
+        console.log("[RESULT] Response: ");
         console.log(response);
         
         loading.dismiss();
         this.goHome();
       },
       (error) => {
-        console.log("Error: ");
+        console.log("[RESULT] Error: ");
         console.log(error);
 
         if(error.status == 0){

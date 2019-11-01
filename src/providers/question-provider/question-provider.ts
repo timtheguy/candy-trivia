@@ -14,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
 export class QuestionProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello QuestionProvider Provider');
+    console.log('[QUESTIONS] Question provider loaded');
   }
 
   getQuestions() {

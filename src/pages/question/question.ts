@@ -27,20 +27,16 @@ export class QuestionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
-    console.log("Loading question...");
 
     this.loadQuestion().subscribe(
       data => {
-        console.log(data);
         this.currentQuestion = data;
         this.currentQuestion.question = decodeURIComponent(this.currentQuestion.question);
         this.answers = this.parseAnswers(this.currentQuestion);
-        console.log(this.answers);
 
-        console.log("Done!");
       },
       error => {
-        console.log("Error: " + error);
+        console.log("[QUESTION] Error: " + error);
       });
   }
 
@@ -87,7 +83,6 @@ export class QuestionPage {
     for (var i = 0, max = entities.length; i < max; ++i) 
         text = text.replace(new RegExp('&'+entities[i][0]+';', 'g'), entities[i][1]);
 
-    console.log(text);
     return text;
   }
 
