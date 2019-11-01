@@ -39,7 +39,9 @@ export class QuestionProvider {
   }
 
   getRandomElement(array) {
-    return array[Math.floor(Math.random() * Math.random() * array.length)];
+    var randomElement = (Math.random() * (array.length - 0 + 1) ) << 0;
+    console.log("[QUESTION] Getting random question #" + randomElement + " from array size " + array.length);
+    return array[randomElement];
   }
 
 }
