@@ -12,6 +12,7 @@
 
 <ion-content padding>
   <div class="question-container">
+    <div>{{ currentQuestion.category }}</div>
     <h3 [innerHTML]="currentQuestion.question | Sanitize"></h3>
     <hr>
     <div *ngIf="answers.length > 0">
@@ -28,5 +29,4 @@
       </ion-grid>
     </div>
   </div>
-
 </ion-content>
